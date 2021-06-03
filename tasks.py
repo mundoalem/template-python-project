@@ -54,7 +54,7 @@ class Project:
         return klass._instance
 
     @property
-    def config(self) -> defaultdict[Any, dict]:
+    def config(self) -> defaultdict:
         return self._config
 
     @property
