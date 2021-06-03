@@ -18,7 +18,6 @@ from invoke import task
 from pathlib import Path
 from setuptools import find_packages
 from setuptools.config import read_configuration
-from typing import Any
 
 
 # #####################################################################################################################
@@ -41,28 +40,27 @@ IGNORE_PACKAGES = ["tests"]
 class Project:
     """A singleton class providing basic properties related to the project"""
 
-    _config: defaultdict
-    _instance: Any = None
+    _instance = None
 
-    def __init__(self) -> None:
+    def __init__(self):
         self._config = read_configuration("setup.cfg")
 
-    def __new__(klass, *args, **kwargs) -> Any:
+    def __new__(klass, *args, **kwargs):
         if not isinstance(klass._instance, klass):
             klass._instance = object.__new__(klass, *args, **kwargs)
 
         return klass._instance
 
     @property
-    def config(self) -> defaultdict:
+    def config(self):
         return self._config
 
     @property
-    def name(self) -> str:
+    def name(self):
         return self.config["metadata"]["name"]
 
     @property
-    def modules(self) -> list[str]:
+    def modules(self):
         return [module for module in find_packages() if module not in IGNORE_PACKAGES]
 
 
