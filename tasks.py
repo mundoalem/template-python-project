@@ -41,7 +41,7 @@ IGNORE_PACKAGES = ["tests"]
 class Project:
     """A singleton class providing basic properties related to the project"""
 
-    _config: defaultdict[Any, dict]
+    _config: defaultdict
     _instance: Any = None
 
     def __init__(self) -> None:
