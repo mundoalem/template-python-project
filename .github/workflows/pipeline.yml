@@ -50,6 +50,7 @@ jobs:
         if: ${{ contains(matrix.os, 'windows') }}
         run: |
           $PY_VERSION = "${{ matrix.python-version }}" -replace "[.]", ""
+          pipenv run reset
           pipenv run "test${PY_VERSION}"
   scan:
     runs-on: ${{ matrix.os }}
