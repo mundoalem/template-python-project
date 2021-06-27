@@ -81,6 +81,8 @@ def clean(c):
     c.run("python setup.py clean")
     c.run("coverage erase")
     c.run("rm -rf *.egg-info")
+    c.run("rm -rf .mypy_cache")
+    c.run("find . -type d -name \"__pycache__\" | grep -v \"^\./\.tox/\" | xargs rm -rf")
     c.run(f"rm -rf {COVERAGE_REPORT_DIR}")
     c.run(f"rm -rf {DOCS_BUILD_DIR}")
     c.run(f"rm -rf {BUILD_DIR}/bdist.*")
