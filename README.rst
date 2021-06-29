@@ -1,5 +1,5 @@
 
-.. image:: https://filedn.eu/l45LsG0EHKuQexEoFRSickh/template_python_project_header.png
+.. image:: https://filedn.eu/l45LsG0EHKuQexEoFRSickh/header_temaplate_python_project.png
    :alt: Template Python Project
    :align: center
 
