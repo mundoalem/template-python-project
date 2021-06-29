@@ -80,6 +80,7 @@ def clean(c):
     """Remove build files and directories"""
     c.run("python setup.py clean")
     c.run("coverage erase")
+    c.run("rm -f coverage.xml")
     c.run("rm -rf *.egg-info")
     c.run("rm -rf .mypy_cache")
     c.run("find . -type d -name '__pycache__' | grep -v '\./\.tox/' | xargs rm -rf")
