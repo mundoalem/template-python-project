@@ -3,17 +3,17 @@ Python Project Template
 
 |shield_python_version| |shield_release| |shield_license| |shield_pipeline_status| |shield_issues| |shield_contributors|
 
-.. |shield_python_version| image:: https://img.shields.io/github/pipenv/locked/python-version/mundoalem/template-python-project?style=flat-square
+.. |shield_python_version| image:: https://img.shields.io/github/pipenv/locked/python-version/mundoalem/template-python-project
    :alt: Python Version
-.. |shield_release| image:: https://img.shields.io/github/v/release/mundoalem/template-python-project?style=flat-square
+.. |shield_release| image:: https://img.shields.io/github/v/release/mundoalem/template-python-project
    :alt: Release Version
-.. |shield_license| image:: https://img.shields.io/github/license/mundoalem/template-python-project?style=flat-square
+.. |shield_license| image:: https://img.shields.io/github/license/mundoalem/template-python-project
    :alt: License
-.. |shield_pipeline_status| image:: https://github.com/mundoalem/template-python-project/actions/workflows/pipeline.yml/badge.svg?style=flat-square
+.. |shield_pipeline_status| image:: https://github.com/mundoalem/template-python-project/actions/workflows/pipeline.yml/badge.svg
    :alt: Pipeline Status
-.. |shield_issues| image:: https://img.shields.io/github/issues/mundoalem/template-python-project?style=flat-square
+.. |shield_issues| image:: https://img.shields.io/github/issues/mundoalem/template-python-project
    :alt: Issues
-.. |shield_contributors| image:: https://img.shields.io/github/issues/mundoalem/template-python-project?style=flat-square
+.. |shield_contributors| image:: https://img.shields.io/github/issues/mundoalem/template-python-project
    :alt: Contributors
 
 A template to scaffold a Python project.
