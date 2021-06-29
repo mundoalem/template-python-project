@@ -11,9 +11,9 @@ Python Project Template
    :alt: License
 .. |shield_pipeline_status| image:: https://github.com/mundoalem/template-python-project/actions/workflows/pipeline.yml/badge.svg?style=flat-square
    :alt: Pipeline Status
-.. |shield_issues| image:: https://img.shields.io/github/issues/mundoalem/template-python-project
+.. |shield_issues| image:: https://img.shields.io/github/issues/mundoalem/template-python-project?style=flat-square
    :alt: Issues
-.. |shield_contributors| image:: https://img.shields.io/github/issues/mundoalem/template-python-project
+.. |shield_contributors| image:: https://img.shields.io/github/issues/mundoalem/template-python-project?style=flat-square
    :alt: Contributors
 
 A template to scaffold a Python project.
