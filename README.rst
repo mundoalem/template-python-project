@@ -1,7 +1,6 @@
 
 .. image:: https://filedn.eu/l45LsG0EHKuQexEoFRSickh/header_temaplate_python_project.png
    :alt: Template Python Project
-   :align: center
 
 Introduction
 ------------
@@ -10,25 +9,25 @@ Introduction
 
 .. |shield_python_version| image:: https://img.shields.io/github/pipenv/locked/python-version/mundoalem/template-python-project
    :alt: Python Version
-   :align: center
+
 .. |shield_release| image:: https://img.shields.io/github/v/release/mundoalem/template-python-project
    :alt: Release Version
-   :align: center
+
 .. |shield_license| image:: https://img.shields.io/github/license/mundoalem/template-python-project
    :alt: License
-   :align: center
+
 .. |shield_pipeline_status| image:: https://github.com/mundoalem/template-python-project/actions/workflows/pipeline.yml/badge.svg
    :alt: Pipeline Status
-   :align: center
+
 .. |shield_coverage| image:: https://codecov.io/gh/mundoalem/template-python-project/branch/main/graph/badge.svg?token=R0HJ0SAOC0
    :alt: Coverage
-   :align: center
+
 .. |shield_issues| image:: https://img.shields.io/github/issues/mundoalem/template-python-project
    :alt: Issues
-   :align: center
+
 .. |shield_contributors| image:: https://img.shields.io/github/issues/mundoalem/template-python-project
    :alt: Contributors
-   :align: center
+
 
 A template to scaffold a Python project.
 
