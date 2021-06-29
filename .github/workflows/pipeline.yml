@@ -44,10 +44,11 @@ jobs:
           pipenv run reset
           pipenv run "test${PY_VERSION}"
         if: ${{ contains(matrix.os, 'windows') }}
-      - run: |
-          bash <(curl -s https://codecov.io/bash)
+      - uses: codecov/codecov-action@v1
+        with:
+          fail_ci_if_error: true
         env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}s
   scan:
     runs-on: ${{ matrix.os }}
     strategy:
