@@ -3,11 +3,11 @@ Python Project Template
 
 |shield_python_version| |shield_release| |shield_license|
 
-.. |shield_python_version| image:: https://img.shields.io/github/pipenv/locked/python-version/mundoalem/template-python-project?style=for-the-badge
+.. |shield_python_version| image:: https://img.shields.io/github/pipenv/locked/python-version/mundoalem/template-python-project?style=flat-square
    :alt: Python Version
-.. |shield_release| image:: https://img.shields.io/github/v/release/mundoalem/template-python-project?style=for-the-badge
+.. |shield_release| image:: https://img.shields.io/github/v/release/mundoalem/template-python-project?style=flat-square
    :alt: Release
-.. |shield_license| image:: https://img.shields.io/github/license/mundoalem/template-python-project?style=for-the-badge
+.. |shield_license| image:: https://img.shields.io/github/license/mundoalem/template-python-project?style=flat-square
    :alt: License
 
 A template to scaffold a Python project.
