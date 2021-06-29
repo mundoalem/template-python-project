@@ -1,7 +1,7 @@
 Python Project Template
 -----------------------
 
-|shield_python_version| |shield_release| |shield_license| |shield_pipeline_status| |shield_issues| |shield_contributors|
+|shield_python_version| |shield_release| |shield_license| |shield_pipeline_status| |shield_coverage| |shield_issues| |shield_contributors|
 
 .. |shield_python_version| image:: https://img.shields.io/github/pipenv/locked/python-version/mundoalem/template-python-project
    :alt: Python Version
@@ -11,6 +11,8 @@ Python Project Template
    :alt: License
 .. |shield_pipeline_status| image:: https://github.com/mundoalem/template-python-project/actions/workflows/pipeline.yml/badge.svg
    :alt: Pipeline Status
+.. |shield_coverage| image:: https://codecov.io/gh/mundoalem/template-python-project/branch/main/graph/badge.svg?token=R0HJ0SAOC0
+   :alt: Coverage
 .. |shield_issues| image:: https://img.shields.io/github/issues/mundoalem/template-python-project
    :alt: Issues
 .. |shield_contributors| image:: https://img.shields.io/github/issues/mundoalem/template-python-project
@@ -117,15 +119,17 @@ your .env file
 
   * - Variable
     - Description
-  * - ``SNYK_TOKEN``
-    - Token used during the security vulnerabilities scan task from Snyk.io
-  * - ``PYPI_PASSWORD``
+  * - `CODECOV_TOKEN`
+    - Token used to calculate and report test coverage from codecov.io
+  * - `SNYK_TOKEN`
+    - Token used during the security vulnerabilities scan task from snyk.io
+  * - `PYPI_PASSWORD`
     - PyPi Password used during the release process
-  * - ``PYPI_USERNAME``
+  * - `PYPI_USERNAME`
     - PyPi User Name used during the release process
-  * - ``PYPI_PASSWORD_TEST``
+  * - `PYPI_PASSWORD_TEST`
     - PyPi Test Password used during the release process
-  * - ``PYPI_USERNAME_TEST``
+  * - `PYPI_USERNAME_TEST`
     - PyPi Test Password used during the release process
 
 
