@@ -4,12 +4,8 @@ Python Project Template
 .. class:: special
 .. image:: https://img.shields.io/github/pipenv/locked/python-version/mundoalem/template-python-project?style=for-the-badge
    :alt: Python Version
-
-.. class:: special
 .. image:: https://img.shields.io/github/v/release/mundoalem/template-python-project?style=for-the-badge
    :alt: Release
-
-.. class:: special
 .. image:: https://img.shields.io/github/license/mundoalem/template-python-project?style=for-the-badge
    :alt: License
 
