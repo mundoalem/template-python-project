@@ -203,6 +203,16 @@ keep discussion brief, civil and focused on what we're actually doing, not wande
 FAQ
 ---
 
-Question 1
+**Will there ever be support for other continuous integration platforms?**
 
-Answer 1
+Right now I have no plans to support other platforms like TravisCI, CircleCI or Gitlab. Anyway, it should be quite easy
+for you to port the GitHub Actions to any platform you like.
+
+The reason for that is that I don't want to have a `.travis.yml`, a `circleci.yml` and a `.gitlab-ci.yml` all together
+in the same place when only one would actually be used. So I want to avoid (for now) cluttering the template with too
+many files that might or might not be useful.
+
+**Do you have plans to build and release for multiple architectures?**
+
+Yes, in the future I want to enable the pipeline to also compile a Python project and generate a binary for multiple
+platforms.
