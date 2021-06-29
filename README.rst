@@ -1,11 +1,10 @@
 Mundoalem
----------
+=========
 
-|project_logo|
-
-.. |project_logo| image:: https://filedn.eu/l45LsG0EHKuQexEoFRSickh/template_python_project_header.png
+.. image:: https://filedn.eu/l45LsG0EHKuQexEoFRSickh/template_python_project_header.png
    :alt: Template Python Project
    :align: center
+
 
 |shield_python_version| |shield_release| |shield_license| |shield_pipeline_status| |shield_coverage| |shield_issues| |shield_contributors|
 
