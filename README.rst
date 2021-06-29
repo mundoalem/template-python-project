@@ -183,9 +183,9 @@ Please keep unstructured critique to a minimum. If you have solid ideas you want
 how it works.
 
 We will exclude you from interaction if you insult, demean or harass anyone. That is not welcome behaviour. We interpret
-the term "harassment" as including the definition in the `Citizen Code of Conduct <http://citizencodeofconduct.org/>`_; if
-you have any lack of clarity about what might be included in that concept, please read their definition. In particular,
-we don't tolerate behavior that excludes people in socially marginalized groups.
+the term "harassment" as including the definition in the `Citizen Code of Conduct <http://citizencodeofconduct.org/>`_;
+if you have any lack of clarity about what might be included in that concept, please read their definition. In
+particular, we don't tolerate behavior that excludes people in socially marginalized groups.
 
 Whether you're a regular contributor or a newcomer, we care about making this community a safe place for you and we've
 got your back.
