@@ -7,7 +7,7 @@ Introduction
 
 |shield_python_version| |shield_release| |shield_license| |shield_pipeline_status| |shield_coverage| |shield_issues| |shield_contributors|
 
-.. |shield_python_version| image:: https://img.shields.io/github/pipenv/locked/python-version/mundoalem/template-python-project
+.. |shield_python_version| image:: https://img.shields.io/pypi/pyversions/template-python-project
    :alt: Python Version
 
 .. |shield_release| image:: https://img.shields.io/github/v/release/mundoalem/template-python-project
@@ -203,6 +203,7 @@ got your back.
 
 Likewise any spamming, trolling, flaming, baiting or other attention-stealing behaviour is not welcome.
 
+
 Communication
 -------------
 
@@ -210,6 +211,9 @@ GitHub issues are the primary way for communicating about specific proposed chan
 
 In both contexts, please follow the conduct guidelines above. Language issues are often contentious and we'd like to
 keep discussion brief, civil and focused on what we're actually doing, not wandering off into too much imaginary stuff.
+
+You can also check the Trello board of all projects part of the Mundoalem organization `here <https://trello.com/b/KunkS6IP/all-mundoalem-projects>`_.
+
 
 FAQ
 ---
