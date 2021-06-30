@@ -121,12 +121,12 @@ jobs:
           python -m pip install --upgrade pipenv==2021.5.29
           pipenv install --dev
       - run: |
-          pipenv run release --pypi-test
+          pipenv run release --pypi-test --noop
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME_TEST }}
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD_TEST }}
       - run: |
-          pipenv run release
+          pipenv run release --noop
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
