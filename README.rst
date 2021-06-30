@@ -7,7 +7,7 @@ Introduction
 
 |shield_python_version| |shield_release| |shield_license| |shield_pipeline_status| |shield_coverage| |shield_issues| |shield_contributors|
 
-.. |shield_python_version| image:: .. image:: https://img.shields.io/github/pipenv/locked/python-version/mundoalem/template-python-project
+.. |shield_python_version| image:: https://img.shields.io/github/pipenv/locked/python-version/mundoalem/template-python-project
    :alt: Python Version
 
 .. |shield_release| image:: https://img.shields.io/github/v/release/mundoalem/template-python-project
