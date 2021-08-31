@@ -73,7 +73,7 @@ it may be better to make the project your own by:
 - Configure in `.coveragerc` the `source` property of your project (usually the name of the project).
 - Update test files under `tests` directory.
 - Make sure you are using the correct Python versions in the jobs configured in `.github/workflows`.
-- Make sure to remove the `--noop` argument in the `release` step of the pipeline in `.github/workflows/pipeline.yml`
+- Make sure to remove the `--noop` argument in the `release` step of the pipeline in `.github/workflows/pipeline.yml`.
 - Update the `README.md` with your project information.
 
 All pipeline jobs can be also run locally by invoking `pipenv` scripts, example:
