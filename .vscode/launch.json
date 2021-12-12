@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": true,
+            "console": "integratedTerminal",
+            "program": "template_python_project/main.py"
+        }
+    ]
+}
