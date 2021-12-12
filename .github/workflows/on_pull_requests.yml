@@ -11,7 +11,9 @@ jobs:
     name: Lint
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/setup-python.yml
+      - uses: .github/actions/setup-python
+        with:
+          python-version: 3.9
       - run: |
           pipenv run lint
 
@@ -25,7 +27,9 @@ jobs:
     needs: lint
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/setup-python.yml
+      - uses: .github/actions/setup-python
+        with:
+          python-version: 3.9
       - run: |
           pipenv run test
       - uses: codecov/codecov-action@v1
@@ -40,7 +44,9 @@ jobs:
     needs: lint
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/setup-python.yml
+      - uses: .github/actions/setup-python
+        with:
+          python-version: 3.9
       - run: |
           pipenv run scan
 
@@ -50,7 +56,9 @@ jobs:
     needs: [test, scan]
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/setup-python.yml
+      - uses: .github/actions/setup-python
+        with:
+          python-version: 3.9
       - run: |
           pipenv run build
       - uses: actions/upload-artifact@v2
