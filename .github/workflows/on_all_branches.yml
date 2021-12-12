@@ -3,8 +3,8 @@ name: Workflow - On All Branches
 on:
   push:
     branches:
-      - **
-      - !main
+      - '**'
+      - '!main'
 
 jobs:
   lint:
