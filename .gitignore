@@ -81,4 +81,6 @@ dmypy.json
 
 # IDE's and Editors
 .idea
-.vscode
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json

@@ -83,6 +83,7 @@ def clean(c):
     c.run("rm -f coverage.xml")
     c.run("rm -rf *.egg-info")
     c.run("rm -rf .mypy_cache")
+    c.run("rm -rf .pytest_cache")
     c.run("find . -type d -name '__pycache__' | grep -v '\./\.tox/' | xargs rm -rf")
     c.run(f"rm -rf {COVERAGE_REPORT_DIR}")
     c.run(f"rm -rf {DOCS_BUILD_DIR}")
@@ -136,28 +137,19 @@ def reset(c):
 @task
 def scan(c):
     """Scan the project for security vulnerabilities"""
+    project = Project()
+
+    for module in project.modules:
+        c.run(f"bandit -r {module}")
+
     c.run("snyk test --fail-on=upgradable")
 
 
 @task
 def test(c):
     """Test the project"""
-    c.run("tox -o --pre -p auto")
-
-
-@task
-def test37(c):
-    """Test the project using only Python 3.7"""
-    c.run("tox -e py37 -o --pre -p auto")
-
-
-@task
-def test38(c):
-    """Test the project using only Python 3.8"""
-    c.run("tox -e py38 -o --pre -p auto")
-
-
-@task
-def test39(c):
-    """Test the project using only Python 3.9"""
-    c.run("tox -e py39 -o --pre -p auto")
+    c.run("coverage erase")
+    c.run("coverage run -m pytest -ra -q")
+    c.run("coverage report")
+    c.run("coverage html")
+    c.run("coverage xml")
