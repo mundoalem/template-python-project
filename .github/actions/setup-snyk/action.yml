@@ -1,0 +1,21 @@
+name: Setup Snyk
+description: Setup the python tools.
+
+inputs:
+  snyk-version:
+    description: Snyk version to install
+    required: false
+    default: latest
+  snyk-platform:
+    description: The platform of the Snyk binary to be downloaded
+    required: false
+    default: linux
+
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        curl https://static.snyk.io/cli/${{ inputs.snyk-version }}/snyk-${{ inputs.snyk-platform }} -o snyk
+        chmod +x ./snyk
+        mv ./snyk /usr/local/bin/
+      shell: bash
