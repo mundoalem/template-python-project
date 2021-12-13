@@ -18,13 +18,9 @@
 				"path": "/usr/bin/zsh"
 			}
 		},
-		"python.defaultInterpreterPath": "/usr/local/bin/python",
 		"python.languageServer": "Default",
 		"python.linting.enabled": true,
-		"python.linting.pylintEnabled": false,
-		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
-		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
-		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy"
+		"python.linting.pylintEnabled": false
 	},
 
 	"extensions": [
@@ -35,6 +31,6 @@
 	"features": {
 	},
 
-	"postCreateCommand": "pyenv local 3.7.12 3.8.12 3.9.9 && pipenv install --dev",
+	"postCreateCommand": "pyenv local 3.9.9 && pipenv install --dev",
 	"remoteUser": "vscode"
 }
