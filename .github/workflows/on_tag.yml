@@ -3,7 +3,7 @@ name: Workflow - On Tags
 on:
   push:
     tags:        
-      - v*
+      - 'v*'
 
 jobs:
   build:
