@@ -23,7 +23,9 @@ WORKDIR $HOME
 RUN python3 -m pip install --upgrade pip \
     && python3 -m pip install --user pipx \
     && python3 -m pipx ensurepath \
-    && pipx install pipenv
+    && pipx install pipenv \
+    && pipx install black==21.12b0 \
+    && pipx install mypy==0.910
 
 RUN curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash \
     && eval "$(pyenv init --path)" \

@@ -15,6 +15,7 @@
 
 from collections import defaultdict
 from invoke import task
+from os import environ
 from pathlib import Path
 from setuptools import find_packages
 from setuptools.config import read_configuration
@@ -35,6 +36,10 @@ IGNORE_PACKAGES = ["tests"]
 # #####################################################################################################################
 # SUPPORTING CLASSES AND FUNCTIONS
 # #####################################################################################################################
+
+
+def is_ci():
+    return "CI" in environ.keys()
 
 
 class Project:
@@ -142,7 +147,11 @@ def scan(c):
     for module in project.modules:
         c.run(f"bandit -r {module}")
 
-    c.run("snyk test --fail-on=upgradable")
+    # Since there is no standard and easy way to store the Snyk's API token in the local configuration, we only run
+    # it if we are running inside the continuous integration environment, otherwise we only scan the source code
+    # with bandit.
+    if is_ci():
+        c.run("snyk test --fail-on=upgradable")
 
 
 @task
