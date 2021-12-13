@@ -1,0 +1,40 @@
+name: Workflow - On All Branches
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!main'
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    name: Lint
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-python
+        with:
+          python-version: 3.9
+      - run: |
+          pipenv run lint
+
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-20.04, windows-2019 ]
+    name: Test
+    needs: lint
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-python
+        with:
+          python-version: 3.9
+      - run: |
+          pipenv run test
+      - uses: codecov/codecov-action@v1
+        with:
+          fail_ci_if_error: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

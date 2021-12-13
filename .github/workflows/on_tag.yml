@@ -1,0 +1,43 @@
+name: Workflow - On Tags
+
+on:
+  push:
+    tags:        
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    name: Build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-python
+        with:
+          python-version: 3.9
+      - run: |
+          pipenv run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: |
+            dist/*.tar.gz
+            dist/*.whl
+
+  release:
+    runs-on: ubuntu-20.04
+    name: Release
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-python
+        with:
+          python-version: 3.9
+      - uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+          path: dist/
+      - run: |
+          pipenv run release --noop
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}

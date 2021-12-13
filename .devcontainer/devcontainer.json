@@ -7,18 +7,28 @@
 	},
 
 	"settings": {
-		"terminal.integrated.profiles.linux": {
-			"bash": {
-				"path": "/bin/bash"
-			}
-		},
-		"python.defaultInterpreterPath": "/usr/local/bin/python",
+		"editor.defaultFormatter": "ms-python.python",
+		"editor.formatOnSave": true,
+		"python.formatting.blackPath": "/home/vscode/.local/bin/black",
+		"python.formatting.provider": "black",
 		"python.languageServer": "Default",
 		"python.linting.enabled": true,
+		"python.linting.lintOnSave": true,
+		"python.linting.mypyEnabled": true,
+		"python.linting.mypyPath": "/home/vscode/.local/bin/mypy",
 		"python.linting.pylintEnabled": false,
-		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
-		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
-		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy"
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "/usr/bin/bash"
+			},
+			"fish": {
+				"path": "/usr/bin/fish"
+			},
+			"zsh": {
+				"path": "/usr/bin/zsh"
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "fish"
 	},
 
 	"extensions": [
@@ -29,6 +39,6 @@
 	"features": {
 	},
 
-	"postCreateCommand": "pyenv local 3.7.12 3.8.12 3.9.9 && pipenv install --dev",
+	"postCreateCommand": "pyenv local 3.9.9 && pipenv install --dev",
 	"remoteUser": "vscode"
 }

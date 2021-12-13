@@ -1,0 +1,91 @@
+name: Workflow - On Main Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    name: Lint
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-python
+        with:
+          python-version: 3.9
+      - run: |
+          pipenv run lint
+
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-20.04, windows-2019 ]
+    name: Test
+    needs: lint
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-python
+        with:
+          python-version: 3.9
+      - run: |
+          pipenv run test
+      - uses: codecov/codecov-action@v1
+        with:
+          fail_ci_if_error: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+  
+  scan:
+    runs-on: ubuntu-20.04
+    name: Scan
+    needs: lint
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-snyk
+        with:
+          snyk-token: ${{ secrets.SNYK_TOKEN }}
+      - uses: ./.github/actions/setup-python
+        with:
+          python-version: 3.9
+      - run: |
+          pipenv run scan
+
+  build:
+    runs-on: ubuntu-20.04
+    name: Build
+    needs: [test, scan]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-python
+        with:
+          python-version: 3.9
+      - run: |
+          pipenv run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: |
+            dist/*.tar.gz
+            dist/*.whl
+
+  release:
+    runs-on: ubuntu-20.04
+    name: Release Test
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup-python
+        with:
+          python-version: 3.9
+      - uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+          path: dist/
+      - run: |
+          pipenv run release --pypi-test --noop
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME_TEST }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD_TEST }}
