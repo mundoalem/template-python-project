@@ -9,7 +9,13 @@
 	"settings": {
 		"terminal.integrated.profiles.linux": {
 			"bash": {
-				"path": "/bin/bash"
+				"path": "/usr/bin/bash"
+			},
+			"fish": {
+				"path": "/usr/bin/bash"
+			},
+			"zsh": {
+				"path": "/usr/bin/zsh"
 			}
 		},
 		"python.defaultInterpreterPath": "/usr/local/bin/python",
