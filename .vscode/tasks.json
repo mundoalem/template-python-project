@@ -45,21 +45,6 @@
             "label": "Test",
             "type": "shell",
             "command": "pipenv run test"
-        },
-        {
-            "label": "Test (Python 3.7)",
-            "type": "shell",
-            "command": "pipenv run test37"
-        },
-        {
-            "label": "Test (Python 3.8)",
-            "type": "shell",
-            "command": "pipenv run test38"
-        },
-        {
-            "label": "Test (Python 3.9)",
-            "type": "shell",
-            "command": "pipenv run test39"
         }
     ]
 }
