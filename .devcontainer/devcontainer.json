@@ -9,6 +9,10 @@
 	"settings": {
 		"editor.defaultFormatter": "ms-python.python",
 		"editor.formatOnSave": true,
+		"editor.rulers": [
+			80,
+			120
+		],
 		"python.formatting.blackPath": "/home/vscode/.local/bin/black",
 		"python.formatting.provider": "black",
 		"python.languageServer": "Default",
@@ -32,6 +36,7 @@
 	},
 
 	"extensions": [
+		"eamodio.gitlens",
 		"ms-python.python",
 		"ms-python.vscode-pylance"
 	],
